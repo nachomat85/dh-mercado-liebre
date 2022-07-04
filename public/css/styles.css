@@ -1,11 +1,16 @@
 /* TOP BAR: Logo + Search bar + pay */
+
+*{
+    padding: 0px;
+    box-sizing: border-box;
+    }
 .main-nav {
     display: flex;
     flex-wrap: wrap;
     font-family: Roboto;
     color: #000;
     background-color: #EAC926;
-    padding: 5px;
+    padding: 1rem;
 }
 
 .nav-bottom nav {
@@ -14,7 +19,7 @@
 
 .nav-bottom {
     width: 100%;
-    display: flex;
+    display: none;
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
@@ -71,7 +76,8 @@ header a {
 }
 
 #main-logo {
-    width: 25%;
+    width: 50%;
+    max-width: 200px;
 }
 
 #search-bar {
@@ -80,16 +86,36 @@ header a {
     align-self: center;
 }
 
+#buscador, #boton-search {
+    line-height: 1;
+    padding: .8125em .75em;
+    border-radius: .375rem;
+    border: solid 0px darkgray;
+    background-color: white;
+}
+#buscador {
+    width: 95%;
+}
+#search-bar form {
+    position: relative;
+}
+#boton-search {
+    position: absolute;
+    right: 5%;
+    top: 1px;
+}
+
 form input {
-    width: 60%;
+    width: 75%;
 }
 
 form button {
-    width: 20%;
+    width: fit-content;
 }
 
 .main-cuotas {
-    width: 25%;
+    width: 100%;
+    align-self: center;
 }
 
 /* Body */
@@ -98,12 +124,16 @@ h3 {
     font-size: 24px;
 }
 
-h4 {
+main p {
     font-size: 16px;
 }
 
-h4.precios {
-    font-size: 18px;
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
 }
 
 footer article {
@@ -117,6 +147,11 @@ footer i {
     margin-top: 25px;
     margin-bottom: 10px;
     color: #1259c3;
+    transition: color, .5s;
+}
+
+footer i:hover {
+    color: #EAC926;
 }
 
 main img {
@@ -136,13 +171,18 @@ footer p {
 
 #copyright {
     margin-top: 25px;
+    width: 100%;
+}
+
+.copyright {
     background-color: #ebebeb;
-    padding: 3px;
     width: 100%;
 }
 
 .banner img {
     max-width: 100%;
+    box-shadow: 0px 2px 3px rgb(100 100 100);
+
 }
 
 body {
@@ -153,15 +193,149 @@ body {
     background-color: #ebebeb;
 }
 
+
+
+footer {
+    background-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
 article {
     background-color: white;
-    width: 95%;
+    /* width: 95%; */
     margin: auto;
+    margin-bottom: 10px;
     border-radius: 5px;
     /* display: flex;
     flex-direction: column; */
 }
 
-footer {
-    background-color: white;
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lista-productos article {
+    width: 100%;
+}
+
+.descripcion-producto {
+    border-top: solid 1px #ebebeb;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+main i {
+    color: #39b54a;
+    border: solid 1px #39b54a;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    transition: .5s;
+}
+
+.precios {
+    font-size: 18px;
+    /* margin-bottom: 0px; */
+    width: 50%;
+    align-self: center;
+}
+.descuento {
+    color: #39b54a;
+    /* margin-top: 0px; */
+    width: 50%;
+    align-self: center;
+}
+
+.nombre-producto {
+    color: #666;
+    margin-bottom: 0px;
+    display: none;
+}
+
+main article {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    transition: box-shaddow, 0.5s;
+}
+
+
+@media (min-width: 361px) {
+    main article {
+        box-shadow: 0px 0px 00px rgb(100, 100, 100);
+        transition: box-shaddow, 0.5s;
+    }
+    .nombre-producto {
+        display: block;
+        color: white;
+        transition: color, .5s;
+    }
+    main article:hover .nombre-producto {
+        color: #666;
+    }
+    .nav-bottom {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    
+    main article:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    .lista-productos article {
+        width: 45%;
+    }
+    .lista-productos {
+        justify-content: space-between;
+    }
+    .hamburger {
+        display: none;
+    }
+    .main-cuotas {
+        width: 100%;
+        align-self: center;
+    }
+    main i:hover {
+        transform: rotate(-90deg)
+    }
+}
+
+@media (min-width: 769px){
+    .lista-productos article {
+        width: 23%;
+    }
+    .search-bar {
+        text-align: center;
+        width: 50%;
+        align-self: center;
+    }
+    #main-logo {
+        width: 25%;
+    }
+    .main-cuotas {
+        width: 25%;
+        align-self: center;
+    }
+    footer article {
+        width: 30%;
+    }
 }
