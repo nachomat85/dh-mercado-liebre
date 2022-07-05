@@ -8,7 +8,7 @@ app.use(express.static(publicPath))
 // app.use(express.static(viewsPath))
 
 
-app.listen(3000,() => {
+app.listen(process.env.PORT || 3000,() => {
     console.log("Server is ready in port 3000")
 })
 
